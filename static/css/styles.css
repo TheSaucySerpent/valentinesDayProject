@@ -3,7 +3,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh; /* Full viewport height */
-  background-color: #fad2e1; /* Pastel Pink */
+  background-color: #fae1dd;
   font-family: "Georgia", serif;
 }
 
@@ -12,16 +12,18 @@ body {
   width: 400px;
   height: 230px;
   margin: auto;
+  background-color: #f4a5ae;
 }
 
 .letter {
   position: absolute;
-  background-color: wheat;
+  background-color: ffe5ec;
   left: 50%;
   top: 50%;
   width: 400px; /* Match width with envelope */
   height: 230px; /* Match height with envelope */
   transform: translate(-50%, -50%);
+  background-color: #fff1e6;
   z-index: 1;
 }
 
@@ -31,10 +33,10 @@ body {
   height: 0;
   border-left: 200px solid transparent; /* Ensure the flap covers the width */
   border-right: 200px solid transparent; /* Ensure the flap covers the width */
-  border-top: 118px solid #ff4d6d; /* Height of the flap */
+  border-top: 150px solid #e63946; /* Height of the flap */
   left: 50%;
   transform: translateX(-50%);
-  z-index: 2;
+  z-index: 3;
 }
 
 .left-side {
@@ -42,8 +44,8 @@ body {
   width: 0;
   height: 0;
   border-top: 115px solid transparent;
-  border-bottom: 115px solid transparent;
-  border-left: 200px solid #a8d8e6;
+  border-bottom: 116px solid transparent;
+  border-left: 200px solid #e3b5a4;
   top: 50%;
   transform: translateY(-50%);
   left: 0;
@@ -55,8 +57,8 @@ body {
   width: 0;
   height: 0;
   border-top: 115px solid transparent;
-  border-bottom: 115px solid transparent;
-  border-right: 200px solid #a8d8e6; /* Match the envelope width */
+  border-bottom: 116px solid transparent;
+  border-right: 200px solid #e3b5a4; /* Match the envelope width */
   top: 50%;
   transform: translateY(-50%);
   right: 0;
@@ -69,7 +71,7 @@ body {
   height: 0;
   border-left: 200px solid transparent; /* Match the width of the envelope */
   border-right: 200px solid transparent; /* Match the width of the envelope */
-  border-bottom: 116px solid #ff4d6d; /* Adjust height for a pointy flap */
+  border-bottom: 118px solid #b56576; /* Adjust height for a pointy flap */
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
