@@ -1,0 +1,143 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  background-color: #e18cc1;
+  font-family: "Great Vibes", cursive;
+  font-size: 20pt;
+}
+
+p {
+  text-align: center;
+  /* font-size: 14px; */
+}
+
+.envelope {
+  position: relative;
+  width: 510px;
+  height: 310px;
+  margin: auto;
+  background-color: #f4a5ae;
+}
+
+.letter {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 505px; /* Match width with envelope */
+  height: 305px; /* Match height with envelope */
+  transform: translate(-50%, -50%);
+  background-color: #fff1e6;
+  z-index: 1;
+  border: 2px solid #831616; /* Add a border */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Add padding */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  box-sizing: border-box;
+}
+
+.flap {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 255px solid transparent; /* Ensure the flap covers the width */
+  border-right: 255px solid transparent; /* Ensure the flap covers the width */
+  border-top: 200px solid #e63946; /* Height of the flap */
+  left: 50%;
+  transform: translateX(-50%);
+  transition: transform 1s ease-in-out;
+  transform-origin: top;
+  z-index: 5;
+}
+
+.open .flap {
+  transform: translateX(-50%) rotateX(180deg);
+  z-index: 5; /* Keep it on top while animating */
+}
+
+.open .letter {
+  transform: translate(-50%, -110%);
+  transition: transform 1s ease-in-out;
+  transition-delay: 0.8s; /* Letter moves after flap opens */
+  z-index: 3; /* Ensure letter appears above the flap */
+}
+
+.letter.closing {
+  transform: translate(-50%, -50%);
+  transition: transform 1s ease-in-out; /* Ensure smooth transition */
+}
+
+.left-side {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 155px solid transparent;
+  border-bottom: 155px solid transparent;
+  border-left: 255px solid #e3b5a4;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+
+.right-side {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 155px solid transparent;
+  border-bottom: 155px solid transparent;
+  border-right: 255px solid #e3b5a4; /* Match the envelope width */
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+}
+
+.bottom-side {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 255px solid transparent; /* Match the width of the envelope */
+  border-right: 255px solid transparent; /* Match the width of the envelope */
+  border-bottom: 200px solid #b56576; /* Adjust height for a pointy flap */
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+
+.left-side,
+.right-side,
+.bottom-side {
+  z-index: 4;
+}
+
+.photos-container {
+  display: flex;
+  flex-direction: column; /* Align images in a column */
+  top: 5%; /* Center them vertically */
+  position: absolute;
+}
+
+.left {
+  left: 5%; /* Move to the left of the envelope */
+}
+
+.right {
+  right: 5%; /* Move to the right of the envelope */
+}
+
+.photo {
+  width: 325px; /* Set a specific width */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Crop the image to fit */
+  border-radius: 8px; /* Optional: rounded corners */
+  margin-bottom: 10%; /* Spacing between images */
+}
+
+.greeting {
+  position: absolute;
+  top: 65%;
+  font-size: 56px; /* Adjust font size */
+  color: #831616; /* Text color */
+  font-family: "Style Script", cursive; /* Font style */
+}
